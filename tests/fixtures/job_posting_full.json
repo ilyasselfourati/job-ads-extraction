@@ -1,0 +1,10 @@
+{
+  "seniority": "senior",
+  "contract_type": "cdi",
+  "home_office_policy": "hybrid",
+  "salary_range": {
+    "min_salary": 55000,
+    "max_salary": 70000
+  },
+  "skills": ["python", "fastapi", "docker", "kubernetes"]
+}

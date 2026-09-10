@@ -1,0 +1,10 @@
+{
+  "seniority": "confirme",
+  "contract_type": "freelance",
+  "home_office_policy": "remote",
+  "salary_range": {
+    "min_salary": 400,
+    "max_salary": null
+  },
+  "skills": ["react", "typescript"]
+}
