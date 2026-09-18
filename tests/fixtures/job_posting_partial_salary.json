@@ -4,7 +4,8 @@
   "home_office_policy": "remote",
   "salary_range": {
     "min_salary": 400,
-    "max_salary": null
+    "max_salary": null,
+    "salary_period": "daily"
   },
   "skills": ["react", "typescript"]
 }

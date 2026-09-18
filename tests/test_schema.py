@@ -26,3 +26,13 @@ def test_minimal_fixture_uses_defaults() -> None:
 
     assert posting.salary_range is None
     assert posting.skills == []
+
+
+def test_freelance_fixture_uses_daily_salary_period() -> None:
+    raw_json = (FIXTURES_DIR / "job_posting_partial_salary.json").read_text(encoding="utf-8")
+
+    posting = JobPosting.model_validate_json(raw_json)
+
+    assert posting.salary_range is not None
+    assert posting.salary_range.salary_period == "daily"
+    assert posting.salary_range.max_salary is None

@@ -1,6 +1,7 @@
 """Extraction schema for JobScope — the contract shared by all three approaches (A/B/C)."""
 
 from enum import Enum
+from typing import Literal
 
 from pydantic import BaseModel
 
@@ -29,6 +30,7 @@ class HomeOfficePolicy(str, Enum):
 class SalaryRange(BaseModel):
     min_salary: int | None = None
     max_salary: int | None = None
+    salary_period: Literal["annual", "daily"] | None = None
     
 class JobPosting(BaseModel):
     seniority: Seniority
