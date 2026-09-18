@@ -105,12 +105,3 @@ Format: `[date] posting id — field — question — decision — rationale`. T
 |---|---|---|---|---|---|
 | _(example)_ | fixture: `job_posting_full` | `seniority` | Title says "Confirmé", no years stated | `confirme` | Rule 1 (title cue) — no need to reach for rule 2 |
 | _(example)_ | fixture: `job_posting_partial_salary` | `salary_range` | `freelance`, single figure `400`, no currency/period stated | `{min: 400, max: null, salary_period: "daily"}` | Freelance rule (§ `salary_range`, rule 4) — TJM, not annualized |
-
-## Follow-ups before annotating
-
-The three design questions are decided; these two are the code changes that decision implies. Annotation can start without them (use the `notes` column and manual `EXCLUDE` marking as a stand-in), but they should land before the sheet is converted back into real `JobPosting` records:
-
-1. **`jobscope.cleaning`:** filter out postings whose `typeContrat` isn't one of the five supported codes (map via `typeContratLibelle`), and print a count of how many were dropped and which codes they were.
-2. **`src/jobscope/schema.py`:** add `salary_period: Literal["annual", "daily"] | None` to `SalaryRange`, and update `tests/fixtures/job_posting_partial_salary.json` / `tests/test_schema.py` accordingly.
-
-The third decision (home-office default) has no code follow-up yet — it's a checkpoint to run manually after ~50 annotations, described above.
