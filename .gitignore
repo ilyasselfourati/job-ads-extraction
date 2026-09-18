@@ -6,6 +6,7 @@ __pycache__/
 # JobScope — raw and cleaned-but-not-annotated scraped data (not redistributed, see README)
 data/raw/
 data/interim/
+data/annotations/
 
 # Environments
 .env
