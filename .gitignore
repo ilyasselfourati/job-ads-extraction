@@ -11,7 +11,7 @@ data/annotations/
 # Environments
 .env
 .venv
-
+job_ads_ipynb
 
 # mypy
 .mypy_cache/
