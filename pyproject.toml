@@ -7,6 +7,9 @@ dependencies = [
     "pydantic>=2",
     "requests>=2.32",
     "python-dotenv>=1",
+    "pandas>=2",
+    "scikit-learn>=1.2",
+    "scipy>=1.10",
 ]
 
 [project.optional-dependencies]
@@ -14,6 +17,8 @@ dev = [
     "pytest",
     "ruff",
     "mypy",
+    "pandas-stubs",
+    "scipy-stubs",
     "ipykernel",
     "nbconvert",
     "matplotlib",
@@ -30,3 +35,7 @@ packages = ["src/jobscope"]
 python_version = "3.11"
 strict = true
 files = ["src", "tests"]
+
+[[tool.mypy.overrides]]
+module = "sklearn.*"
+ignore_missing_imports = true
